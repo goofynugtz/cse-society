@@ -11,7 +11,7 @@ export default function Layout({ children }: any) {
 
   useEffect(() => {
     setMounted(theme === 'dark' ? true : false)
-  }, [])
+  }, [theme])
 
   return (
     <>

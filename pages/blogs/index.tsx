@@ -30,8 +30,8 @@ export default function Blogs({ posts }: Posts) {
       <Layout>
         {posts?.length > 0 && posts.map(({ frontmatter: { title, date, description, tags }, slug }) => {
           return (
-          <Link href={'/blogs/[slug]'} as={`/blogs/${slug}`}>
-            <div key={slug} className='blog-cards'>
+          <Link href={'/blogs/[slug]'} as={`/blogs/${slug}`} key={slug}>
+            <div  className='blog-cards'>
               <div className="blog-timestamp">
                 <span className='blog-date'>{date}</span>
               </div>
