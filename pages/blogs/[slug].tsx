@@ -70,7 +70,7 @@ export default function Post({ frontmatter, content }: Post) {
   return (
     <>
       <Head>
-        <title>blogs@ranjanrahul</title>
+        <title>CSE Society &#x2223; Blogs</title>
         <meta name='description' content={frontmatter.description} />
         <meta name='og:title' content={frontmatter.title} />
       </Head>

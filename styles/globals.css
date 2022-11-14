@@ -33,7 +33,7 @@
   --transparency: rgba(255, 255, 255, 0.05);
   --hover: #0d92ff;
   --opacity: 30%;
-  --width: 70rem;
+  --width: 75rem;
 }
 
 .light {
@@ -46,7 +46,7 @@
   --transparency: rgba(0, 0, 0, 0.05);
   --hover: #0d92ff;
   --opacity: 50%;
-  --width: 70rem;
+  --width: 75rem;
 }
 
 html,
@@ -100,12 +100,11 @@ a {
   margin: 2rem auto;
 }
 
-/* navstart */
 .header {
   display: flex;
   margin: 0 auto;
+  padding: 0 2rem;
   max-width: var(--width);
-  /* background-color: transparent; */
   height: 10rem;
   justify-content: space-between;
   list-style-type: none;
@@ -136,6 +135,7 @@ a {
   background-color: var(--font-color-primary);
   transition: all 2s;
   width: 100%;
+  overflow-x: scroll;
 }
 
 .nav {
@@ -148,13 +148,13 @@ a {
 }
 
 .nav .button {
-  margin: 1rem 2rem 1rem 0rem;
+  margin: 1rem 2rem;
 }
 
 .main {
   max-width: var(--width);
   /* margin: 0 auto; */
-  padding: 0;
+  padding: 0 2rem;
   display: flex;
 }
 
@@ -183,7 +183,7 @@ a {
   z-index: -1;
   pointer-events: none;
   height: 100vh;
-  width: 100vw;
+  min-width: 100vw;
   transition: all 2s;
   background-image: linear-gradient(to bottom, var(--gradient-color-end), var(--gradient-color-start)), url(../public/assets/background.jpg);
   background-size: cover;
@@ -193,7 +193,7 @@ a {
 }
 
 .main .stories {
-  width: var(--width);
+  max-width: var(--width);
   /* margin: 0; */
   /* background: transparent; */
   /* background-color: var(--transparency); */
@@ -234,7 +234,7 @@ a {
 }
 
 .main .blog-post {
-  width: var(--width);
+  max-width: var(--width);
 }
 
 .main .blog-post .blog-date {
@@ -258,12 +258,12 @@ a {
 }
 
 .footer {
-  /* background-color: var(--background-color); */
   color: var(--font-color-primary);
-  margin: 0 auto;
   display: flex;
+  margin: 0 auto;
+  padding: 0 2rem;
   justify-content: space-between;
-  width: var(--width);
+  max-width: var(--width);
   height: 10rem;
   flex-direction: row-reverse;
 }
@@ -281,7 +281,7 @@ a {
 .footer .right {
   display: flex;
   transition: all 2s;
-	width: max-content;
+	/* width: max-content; */
   flex-direction: row;
 }
 
