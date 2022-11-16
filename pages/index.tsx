@@ -23,7 +23,6 @@ export async function getStaticProps() {
   const path = `${process.cwd()}/content/stories`
   const stories = fs.readdirSync(path).map((folder) => {
     const storyPath = path+'/'+folder;
-    console.log(storyPath);
     return {
       key: folder,
       value: fs.readdirSync(storyPath),
