@@ -33,7 +33,7 @@
   --transparency: rgba(255, 255, 255, 0.05);
   --hover: #0d92ff;
   --opacity: 30%;
-  --width: 75rem;
+  --width: 100rem;
 }
 
 .light {
@@ -46,7 +46,16 @@
   --transparency: rgba(0, 0, 0, 0.05);
   --hover: #0d92ff;
   --opacity: 50%;
-  --width: 75rem;
+  --width: 100rem;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	scrollbar-width: none;
+  overflow-x: hidden;
+
 }
 
 html,
@@ -62,6 +71,11 @@ body {
   /* width: 100vw; */
   overflow-x: hidden;
   background-color: var(--background-color);
+  /* font-size: 2rem; */
+}
+
+body::-webkit-scrollbar{
+	display: none;
 }
 
 h1 {
@@ -77,16 +91,6 @@ a {
 * {
   box-sizing: border-box;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-} */
 
 
 .main {
@@ -105,12 +109,18 @@ a {
   margin: 0 auto;
   padding: 0 2rem;
   max-width: var(--width);
-  height: 10rem;
+  height: 15rem;
   justify-content: space-between;
   list-style-type: none;
-  font-size: 1.4rem;
+  font-size: 2rem;
   z-index: 2;
+}
 
+@media only screen and (max-width: 768px) {
+  .header {
+    height: 10rem;
+		font-size: 1.2rem;
+	}
 }
 
 .header .group {
@@ -130,18 +140,32 @@ a {
   fill: var(--font-color-primary);
 }
 
+@media only screen and (max-width: 768px) {
+  .header .left svg {
+    height: 2.5rem;
+    width: 2.5rem;
+		font-size: 1rem;
+	}
+}
+
 .nav-bg {
   position: relative;
   background-color: var(--font-color-primary);
-  transition: all 2s;
+  transition: all 1s;
   width: 100%;
-  overflow-x: scroll;
+}
+
+@media only screen and (max-width: 768px) {
+	.nav-bg {
+    overflow-x: scroll;
+	}
 }
 
 .nav {
   display: flex;
   max-width: var(--width);
-  transition: all 2s;
+  transition: all 1s;
+  font-size: 1.6rem;
   margin: 0 auto;
   background-color: var(--font-color-primary);
   color: var(--background-color);
@@ -151,6 +175,14 @@ a {
   margin: 1rem 2rem;
 }
 
+@media only screen and (max-width: 768px) {
+  .nav {
+    font-size: 1.2rem;
+  }
+  .nav .button {
+    margin: 1rem 1.5rem;
+  }
+}
 .main {
   max-width: var(--width);
   /* margin: 0 auto; */
@@ -165,11 +197,22 @@ a {
 
 .main .vision .hero-title {
   padding: 2rem 0;
-  font-size: 2.8rem;
+  font-size: 3.8rem;
 }
 
 .main .vision .hero-content {
-  font-size: 1.2rem;
+  font-size: 2rem;
+  line-height: 3.5rem;
+  font: SFProSemibold;
+}
+
+@media only screen and (max-width: 768px) {
+  .main .vision .hero-title {
+    font-size: 2.8rem;
+  }
+  .main .vision .hero-content {
+    font-size: 1.6rem;
+  }
 }
 
 .hero-content .image img {
@@ -194,24 +237,42 @@ a {
 
 .main .stories {
   max-width: var(--width);
-  /* margin: 0; */
-  /* background: transparent; */
-  /* background-color: var(--transparency); */
 }
 
-.main .stories .story-card {
+.main .stories .story-cards {
   display: flex;
   flex-direction: row;
+  position: relative;
+  width: var(--width);
 }
 
-.main .stories .story-card .marble {
-  margin: 1rem;
+.main .stories .story-cards .story-group {
+  margin: 1rem 8rem 0 0;
+  position: relative;
+}
+.main .stories .story-cards .story-group .marble-0 {
+  position: absolute;
+  left: 0rem;
+  z-index: 5;
+  /* top: 0rem; */
+}
+.main .stories .story-cards .story-group .marble-1 {
+  position: absolute;
+  left: 2.5rem;
+  z-index: 10;
 }
 
-.main .stories .story-card .marble img {
+.main .stories .story-cards .story-group .marble-2 {
+  position: relative;
+  left: 5rem;
+  z-index: 15;
+}
+
+.main .story-group .marble img {
   object-fit: cover;
   border-radius: 100rem;
-  box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.2);
+  /* border: solid .5rem var(--transparency); */
+  box-shadow: 1rem 1rem 4rem rgba(0, 0, 0, 0.25);
   /* opacity: 10%; */
 }
 
@@ -252,7 +313,7 @@ a {
 
 
 .footer-bg {
-  transition: all 2s;
+  /* transition: all 2s; */
   background-color: var(--background-color);
 
 }
@@ -280,7 +341,7 @@ a {
 
 .footer .right {
   display: flex;
-  transition: all 2s;
+  transition: all 1s;
 	/* width: max-content; */
   flex-direction: row;
 }

@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import Layout from '../components/Layout';
 import Stories from '../components/Stories';
+import fs from 'fs';
 
-export default function Home() {
 
+export default function Home({ stories }:any) {
   return (
     <>
       <Head>
@@ -12,8 +13,21 @@ export default function Home() {
       </Head>
       <Layout>
         <div className='background'></div>
-        <Stories />
+        <Stories stories={stories}/>
       </Layout>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const path = `${process.cwd()}/content/stories`
+  const stories = fs.readdirSync(path).map((folder) => {
+    const storyPath = path+'/'+folder;
+    console.log(storyPath);
+    return {
+      key: folder,
+      value: fs.readdirSync(storyPath),
+    }
+  })
+  return {props: {stories}};
 }

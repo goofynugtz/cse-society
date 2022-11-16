@@ -3,7 +3,6 @@ import Layout from '../../components/Layout';
 import { Key } from 'react';
 import fs from 'fs';
 import Link from 'next/link';
-// const matter = require('gray-matter')
 // @ts-ignore
 import matter from 'gray-matter';
 
