@@ -155,11 +155,11 @@ a {
   width: 100%;
 }
 
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
 	.nav-bg {
     overflow-x: scroll;
 	}
-}
+} */
 
 .nav {
   display: flex;
@@ -233,6 +233,12 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   filter: opacity(var(--opacity));
+}
+
+@media only screen and (max-width: 768px) {
+  .background {
+    background-position: 80% 0;
+  }
 }
 
 .main .stories {
@@ -310,8 +316,6 @@ a {
   font-size: 2rem;
 }
 
-
-
 .footer-bg {
   /* transition: all 2s; */
   background-color: var(--background-color);
@@ -322,11 +326,13 @@ a {
   color: var(--font-color-primary);
   display: flex;
   margin: 0 auto;
+  font-size: 1.6rem;
   padding: 0 2rem;
   justify-content: space-between;
   max-width: var(--width);
-  height: 10rem;
+  /* height: 20rem; */
   flex-direction: row-reverse;
+  padding-bottom: 4rem;
 }
 
 .footer .group {
@@ -342,10 +348,33 @@ a {
 .footer .right {
   display: flex;
   transition: all 1s;
-	/* width: max-content; */
   flex-direction: row;
 }
 
 .footer .button {
   margin: 1rem 2rem 1rem 0rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .footer {
+    flex-direction: column-reverse;
+    padding-bottom: 4rem;
+    justify-content: flex-start;
+  }
+
+  .footer .left {
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 1.6rem;
+    
+  }
+  .footer .right {
+    font-size: 1.2rem;
+    justify-content: flex-end;
+  }
+
+  .footer .button {
+    display: flex;
+    margin: 2rem 0rem 2rem 2rem;
+  }
 }

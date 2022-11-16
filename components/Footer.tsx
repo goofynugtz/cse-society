@@ -18,7 +18,7 @@ const Footer = () => {
         </div>
         <div className="group right">
           <Link href='/'>
-            <div className="home button">Back To Home</div>
+            <div className="home button">Top</div>
           </Link>
           <Link href='/vision'>
             <div className="vision button">Vision</div>
