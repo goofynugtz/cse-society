@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Layout from '../components/Layout';
 import Stories from '../components/Stories';
 import fs from 'fs';
+import News from '../components/News';
 
 
 export default function Home({ stories }:any) {
@@ -14,6 +15,7 @@ export default function Home({ stories }:any) {
       <Layout>
         <div className='background'></div>
         <Stories stories={stories}/>
+        <News />
       </Layout>
     </>
   )

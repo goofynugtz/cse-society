@@ -36,9 +36,7 @@ export default function Blogs({ posts }: Posts) {
               </div>
               <div className="blog-details">
                 <header>
-                  <div>
-                      <div className='blog-title'>{title}</div>
-                  </div>
+                  <div className='blog-title'>{title}</div>
                 </header>
                 <section className='blog-description'>
                   {description}
@@ -71,7 +69,6 @@ export async function getStaticProps() {
     const frontmatter = {
       ...data,
     };
-
     return {
       slug: filename.replace('.md', ''),
       frontmatter,
