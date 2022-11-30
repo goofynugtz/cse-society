@@ -221,6 +221,15 @@ a {
   border-radius: 512px;
 }
 
+.bg-1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -20;
+  pointer-events: none;
+  min-width: 100vw;
+}
+
 .background {
   position: absolute;
   top: 0;
@@ -229,17 +238,21 @@ a {
   pointer-events: none;
   height: 100vh;
   min-width: 100vw;
-  transition: all 2s;
-  background-image: linear-gradient(to bottom, var(--gradient-color-end), var(--gradient-color-start)), url(../public/assets/background.jpg);
+  transition: all 1s;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   filter: opacity(var(--opacity));
 }
 
+.background img {
+  mask-image: linear-gradient(to top, var(--gradient-color-end), var(--gradient-color-start));
+  -webkit-mask-image: linear-gradient(to top, var(--gradient-color-end), var(--gradient-color-start));
+}
+
 @media only screen and (max-width: 768px) {
-  .background {
-    background-position: 80% 0;
+  .background img {
+    object-position: 80% 0;
   }
 }
 
