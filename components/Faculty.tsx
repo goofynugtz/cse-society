@@ -22,7 +22,7 @@ const Faculty = ({ details }: any) => {
                 {/* <a href={`tel:${detail.phone}`}>
                   <div className="detail phone">{`${detail.phone}`}</div>
                 </a> */}
-                <div className="detail phone">{`${detail.phone}`}</div>
+                {/* <div className="detail phone">{`${detail.phone}`}</div> */}
               </div>
             </div>
           )

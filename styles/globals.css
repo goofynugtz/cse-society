@@ -398,15 +398,14 @@ a {
   font-size: 1.4rem;
   color: var(--transparency-alt);
   transition: all 2s;
-  margin-bottom: .5rem;
+  /* margin-bottom: .5rem; */
   user-select: none;
 }
 
 .main .faculty .hero-content .profile-card .profile-detail .detail {
+  color: var(--transparency-alt);
   font-size: 1.2rem;
-  /* color: */
-  /* transition: all 1s; */
-  /* margin-top: 1rem; */
+  transition: all 2s;
 }
 
 @media only screen and (max-width: 768px) {
