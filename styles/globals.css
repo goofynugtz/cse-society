@@ -359,7 +359,7 @@ a {
 .main .faculty .hero-content {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  /* width: var(--width); */
+  max-width: var(--width);
 }
 
 
@@ -406,6 +406,12 @@ a {
   color: var(--transparency-alt);
   font-size: 1.2rem;
   transition: all 2s;
+}
+
+@media only screen and (min-width:769px) and (max-width: 1024px) {
+  .main .faculty .hero-content {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media only screen and (max-width: 768px) {
