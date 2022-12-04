@@ -264,40 +264,83 @@ a {
 .main .stories .story-cards {
   display: flex;
   flex-direction: row;
-  position: relative;
   width: var(--width);
 }
 
-.main .stories .story-cards .story-group {
-  margin: 1rem 8rem 0 0;
-  position: relative;
-}
-.main .stories .story-cards .story-group .marble-0 {
-  position: absolute;
-  left: 0rem;
-  z-index: 5;
-  /* top: 0rem; */
-}
-.main .stories .story-cards .story-group .marble-1 {
-  position: absolute;
-  left: 2.5rem;
-  z-index: 10;
+.main .stories .story-cards .story {
+  margin: 1rem 4rem 0 0;
+  width: 10rem;
+  /* height: 15rem; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.main .stories .story-cards .story-group .marble-2 {
+.main .stories .story-cards .story .marble {
+  height: 10rem;
+  width: 10rem;
   position: relative;
-  left: 5rem;
-  z-index: 15;
 }
 
-.main .story-group .marble img {
+.main .stories .story-cards .story .label {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.main .story .marble img {
   object-fit: cover;
   border-radius: 100rem;
-  /* border: solid .5rem var(--transparency); */
   box-shadow: 1rem 1rem 4rem rgba(0, 0, 0, 0.25);
-  /* opacity: 10%; */
 }
 
+@media only screen and (max-width: 768px) {
+  .main .stories .story-cards .story {
+    margin: 1rem 0 0 0;
+  }
+  .main .stories .story-cards .story .marble {
+    height: 7.5rem;
+    width: 7.5rem;
+  }
+  .main .stories .story-cards .story .label {
+    /* margin-top: 1.5rem; */
+    font-size: 1.2rem;
+  }
+}
+
+.story-view {
+  transition: all 1s;
+}
+
+.story-contain {
+  z-index: -5;
+  animation: fadeIn 1s;
+  
+}
+.story-contain img {
+  /* opacity: 0; */
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.story-thumbnails {
+  position: absolute;
+  padding: 1rem;
+  z-index: 100;
+}
+
+.story-thumbnails button {
+  background-color: transparent;
+  border: none;
+  margin: none;
+  padding: 0.1rem;
+}
+
+/* .story-thumbnails img {
+} */
 
 .main .blog-cards {
   padding: 1rem 0;
