@@ -25,7 +25,7 @@
 
 @keyframes fadeIn {
   0% { opacity: 0; }
-  /* 10% { opacity: .1; }
+  10% { opacity: .1; }
   20% { opacity: .2; }
   30% { opacity: .3; }
   40% { opacity: .4; }
@@ -33,7 +33,7 @@
   60% { opacity: .6; }
   70% { opacity: .7; }
   80% { opacity: .8; }
-  90% { opacity: .9; } */
+  90% { opacity: .9; }
   100% { opacity: 1; }
 }
 
@@ -350,11 +350,20 @@ a {
 
 .main .blog-details {
   padding-left: 2rem;
+
+}
+
+.main .blog-details .blog-title:hover {
+  text-decoration: underline;
 }
 
 .main .blog-details .blog-description {
   color: var(--transparency-alt);
   transition: all 1s;
+}
+
+.main .blog-title {
+  font-size: 3rem;
 }
 
 .tags {
@@ -371,9 +380,6 @@ a {
   margin: 1rem 1rem 0 0;
 }
 
-.main .blog-title {
-  font-size: 3rem;
-}
 
 @media only screen and (max-width: 768px) {
   .main .blog-timestamp {
@@ -447,6 +453,10 @@ a {
   color: var(--transparency-alt);
   font-size: 1.2rem;
   transition: all 2s;
+}
+
+.main .faculty .hero-content .profile-card .profile-detail .email:hover {
+  text-decoration: underline;
 }
 
 @media only screen and (min-width:769px) and (max-width: 1024px) {
