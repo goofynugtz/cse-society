@@ -29,31 +29,32 @@ export default function Blogs({ posts }: Posts) {
       <Layout>
         {posts?.length > 0 && posts.map(({ frontmatter: { title, date, description, tags }, slug }) => {
           return (
-          <Link href={'/blogs/[slug]'} as={`/blogs/${slug}`} key={slug}>
-            <div  className='blog-cards'>
-              <div className="blog-timestamp">
-                <span className='blog-date'>{date}</span>
+            <Link href={'/blogs/[slug]'} as={`/blogs/${slug}`} key={slug}>
+              <div className='blog-cards'>
+                <div className="blog-timestamp">
+                  <span className='blog-date'>{date}</span>
+                </div>
+                <div className="blog-details">
+                  <header>
+                    <div className='blog-title'>{title}</div>
+                  </header>
+                  <section className='blog-description'>
+                    {description}
+                  </section>
+                  <section className='tags'>
+                    {tags.map((tag) => {
+                      return (
+                        <span key={tag} className='tag'>
+                          {tag}
+                        </span>
+                      )
+                    })}
+                  </section>
+                </div>
               </div>
-              <div className="blog-details">
-                <header>
-                  <div className='blog-title'>{title}</div>
-                </header>
-                <section className='blog-description'>
-                  {description}
-                </section>
-                <section className='tags'>
-                  {tags.map((tag) => {
-                    return (
-                      <span key={tag} className='tag'>
-                        {tag}
-                      </span>
-                    )
-                  })}
-                </section>
-              </div>
-            </div>
             </Link>
-          )}
+          )
+        }
         )}
       </Layout>
     </>
@@ -66,6 +67,8 @@ export async function getStaticProps() {
     const markdownWithMetadata = fs
       .readFileSync(`content/posts/${filename}`).toString()
     const { data, content } = matter(markdownWithMetadata);
+    // console.log(data);
+    // console.log(data["date"]);
     const frontmatter = {
       ...data,
     };
@@ -75,6 +78,6 @@ export async function getStaticProps() {
       content
     };
   })
-
+  posts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf())
   return { props: { posts } };
 }

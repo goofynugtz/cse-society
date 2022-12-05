@@ -23,6 +23,20 @@
   src: url("../public/fonts/SFPro/sfmono-regular.ttf");
 }
 
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  /* 10% { opacity: .1; }
+  20% { opacity: .2; }
+  30% { opacity: .3; }
+  40% { opacity: .4; }
+  50% { opacity: .5; }
+  60% { opacity: .6; }
+  70% { opacity: .7; }
+  80% { opacity: .8; }
+  90% { opacity: .9; } */
+  100% { opacity: 1; }
+}
+
 .dark {
   --background-color: #1A1B26;
   --gradient-color-start: #1A1B26;
@@ -70,10 +84,8 @@ body {
 }
 
 body {
-  /* width: 100vw; */
   overflow-x: hidden;
   background-color: var(--background-color);
-  /* font-size: 2rem; */
 }
 
 body::-webkit-scrollbar{
@@ -157,12 +169,6 @@ a {
   width: 100%;
 }
 
-/* @media only screen and (max-width: 768px) {
-	.nav-bg {
-    overflow-x: scroll;
-	}
-} */
-
 .nav {
   display: flex;
   max-width: var(--width);
@@ -187,7 +193,6 @@ a {
 }
 .main {
   max-width: var(--width);
-  /* margin: 0 auto; */
   padding: 0 2rem;
   display: flex;
 }
@@ -215,19 +220,6 @@ a {
   .main .vision .hero-content {
     font-size: 1.6rem;
   }
-}
-
-.hero-content .image img {
-  border-radius: 512px;
-}
-
-.bg-1{
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -20;
-  pointer-events: none;
-  min-width: 100vw;
 }
 
 .background {
@@ -270,7 +262,6 @@ a {
 .main .stories .story-cards .story {
   margin: 1rem 4rem 0 0;
   width: 10rem;
-  /* height: 15rem; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -291,6 +282,7 @@ a {
   object-fit: cover;
   border-radius: 100rem;
   box-shadow: 1rem 1rem 4rem rgba(0, 0, 0, 0.25);
+  animation: fadeIn .5s;
 }
 
 @media only screen and (max-width: 768px) {
@@ -302,7 +294,6 @@ a {
     width: 7.5rem;
   }
   .main .stories .story-cards .story .label {
-    /* margin-top: 1.5rem; */
     font-size: 1.2rem;
   }
 }
@@ -317,13 +308,7 @@ a {
   
 }
 .story-contain img {
-  /* opacity: 0; */
   opacity: 1;
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
 }
 
 .story-thumbnails {
@@ -339,25 +324,21 @@ a {
   padding: 0.1rem;
 }
 
-/* .story-thumbnails img {
-} */
-
 .main .blog-cards {
   padding: 1rem 0;
   display: flex;
   flex-direction: row;
   font-size: 1.6rem;
-  /* align-items: center; */
-  /* justify-content: space-between; */
-  /* width: var(--width); */
 }
 
 .main .blog-timestamp {
-  /* height: 2rem; */
   padding-right: 2rem;
+  justify-content: flex-end;
+  min-width: 20rem;
   display: flex;
   align-items: center;
   border-right: .1rem solid var(--font-color-primary);
+  transition: all 1s;
 }
 
 .main .blog-post {
@@ -373,13 +354,28 @@ a {
   padding-left: 2rem;
 }
 
+.tags {
+  display: flex;
+}
+
+.tag {
+  background-color: var(--transparency);
+  color: var(--transparency-alt);
+  font-size: 1rem;
+  border-radius: 10rem;
+  padding: 0.5rem 1rem;
+  margin: 1rem 1rem 0 0;
+}
+
 .main .blog-title {
   font-size: 3rem;
 }
 
 @media only screen and (max-width: 768px) {
   .main .blog-timestamp {
+    font-size: 1rem;
     padding-right: 1rem;
+    min-width: 11rem;
   }
   .main .blog-cards {
     font-size: 1rem;
@@ -422,8 +418,7 @@ a {
   background-position: center;
   user-select: none;
   pointer-events: none;
-  /* height: 64px; */
-  /* width: 64px; */
+  animation: fadeIn 1s;
 }
 
 .main .faculty .hero-content .profile-card .profile-detail {
@@ -441,7 +436,6 @@ a {
   font-size: 1.4rem;
   color: var(--transparency-alt);
   transition: all 2s;
-  /* margin-bottom: .5rem; */
   user-select: none;
 }
 
@@ -468,10 +462,10 @@ a {
   .main .faculty .hero-content .profile-card {
     margin: 1.5rem 0;
   }
-
   .main .faculty .hero-content .profile-card .profile-image img {
     height: 4.2rem;
     width: 4.2rem;
+    animation: faceIn 1s;
   }
   .main .faculty .hero-content .profile-card .profile-detail {
     margin: 0 1.5rem;
@@ -488,9 +482,7 @@ a {
 }
 
 .footer-bg {
-  /* transition: all 2s; */
   background-color: var(--background-color);
-
 }
 
 .footer {
@@ -501,7 +493,6 @@ a {
   padding: 0 2rem;
   justify-content: space-between;
   max-width: var(--width);
-  /* height: 20rem; */
   flex-direction: row-reverse;
   padding-bottom: 4rem;
 }
@@ -509,7 +500,6 @@ a {
 .footer .group {
   display: flex;
   align-items: center;
-  /* flex-direction: row; */
 }
 
 .footer .left {
@@ -537,8 +527,8 @@ a {
     display: flex;
     flex-direction: row-reverse;
     font-size: 1.6rem;
-    
   }
+
   .footer .right {
     font-size: 1.2rem;
     justify-content: flex-end;

@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 
 export default function Story({ stories }: any) {
@@ -17,6 +17,8 @@ export default function Story({ stories }: any) {
         }} />
         <Image alt="" src={`/assets/${stories[index]}`} fill style={{
           objectFit: 'cover',
+          overflowY: 'hidden',
+          overflowX: 'hidden',
           filter: 'blur(120px)',
           zIndex: '-10'
         }} />
