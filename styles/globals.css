@@ -261,7 +261,6 @@ a {
 
 .main .stories .story-cards .story {
   margin: 1rem 4rem 0 0;
-  width: 10rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -287,7 +286,7 @@ a {
 
 @media only screen and (max-width: 768px) {
   .main .stories .story-cards .story {
-    margin: 1rem 0 0 0;
+    margin: 1rem 2rem 0 0;
   }
   .main .stories .story-cards .story .marble {
     height: 7.5rem;
@@ -338,7 +337,6 @@ a {
   display: flex;
   align-items: center;
   border-right: .1rem solid var(--font-color-primary);
-  transition: all 1s;
 }
 
 .main .blog-post {
@@ -354,6 +352,11 @@ a {
   padding-left: 2rem;
 }
 
+.main .blog-details .blog-description {
+  color: var(--transparency-alt);
+  transition: all 1s;
+}
+
 .tags {
   display: flex;
 }
@@ -363,6 +366,7 @@ a {
   color: var(--transparency-alt);
   font-size: 1rem;
   border-radius: 10rem;
+  transition: all 1s;
   padding: 0.5rem 1rem;
   margin: 1rem 1rem 0 0;
 }
