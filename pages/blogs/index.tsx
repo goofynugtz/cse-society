@@ -27,35 +27,48 @@ export default function Blogs({ posts }: Posts) {
         <title>CSE Society &#x2223; Blogs</title>
       </Head>
       <Layout>
-        {posts?.length > 0 && posts.map(({ frontmatter: { title, date, description, tags }, slug }) => {
-          return (
-            <Link href={'/blogs/[slug]'} as={`/blogs/${slug}`} key={slug}>
-              <div className='blog-cards'>
-                <div className="blog-timestamp">
-                  <span className='blog-date'>{date}</span>
+        <div className="blogs">
+          {posts?.length > 0 && posts.map(({ frontmatter: { title, date, description, tags }, slug }) => {
+            return (
+              <Link href={'/blogs/[slug]'} as={`/blogs/${slug}`} key={slug}>
+                <div className='blog-cards'>
+                  <div className="blog-thumb">
+
+                  </div>
+                  <div className="blog-details">
+                    <header>
+                      <div className='blog-title'>{title}</div>
+                    </header>
+                    <section className='blog-description'>
+                      {description}
+                    </section>
+                    <section className='tags'>
+                      {tags.map((tag) => {
+                        return (
+                          <span key={tag} className='tag'>
+                            {tag}
+                          </span>
+                        )
+                      })}
+                    </section>
                 </div>
-                <div className="blog-details">
-                  <header>
-                    <div className='blog-title'>{title}</div>
-                  </header>
-                  <section className='blog-description'>
-                    {description}
-                  </section>
-                  <section className='tags'>
-                    {tags.map((tag) => {
-                      return (
-                        <span key={tag} className='tag'>
-                          {tag}
-                        </span>
-                      )
-                    })}
-                  </section>
-                </div>
-              </div>
-            </Link>
-          )
-        }
-        )}
+                    <section className='blog-bottom'>
+                      <div className='blog-author'>
+                        <div className="author-thumb">
+
+                        </div>
+                        <div className="author-name">
+                          Rahul Ranjan
+                        </div>
+                      </div>
+                      <div className='blog-timestamp'>{date}</div>
+                    </section>
+                  </div>
+              </Link>
+            )
+          }
+          )}
+        </div>
       </Layout>
     </>
   )

@@ -13,5 +13,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ### Plans to be implemented
 - Sign in using Google institute mail.
 - Stories, similar to blogs
-- Members
 - Events
+- Navlink hover
+- Search
