@@ -456,7 +456,7 @@ a {
 
 @media only screen and (max-width: 768px) {
   .main .blogs {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
   .main .blogs .blog-cards {
     /* width: 20rem; */
@@ -479,9 +479,16 @@ a {
   }
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 768px) {
+  .main .blogs {
+    grid-template-columns: 1fr;
+  }
+  .main .blogs .blog-cards {
+    height: auto;
+  }
   .main .blogs .blog-cards .blog-thumb {
-
+    /* visibility: hidden; */
+    height: 0rem;
   }
 }
 
