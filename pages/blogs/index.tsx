@@ -58,7 +58,7 @@ export default function Blogs({ posts }: Posts) {
 
                         </div>
                         <div className="author-name">
-                          Rahul Ranjan
+                          Rahul R
                         </div>
                       </div>
                       <div className='blog-timestamp'>{date}</div>
